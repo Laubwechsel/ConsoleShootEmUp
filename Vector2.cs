@@ -53,6 +53,7 @@ namespace ConsoleShootEmUp
         {
             return a.X != b.X || a.Y != b.Y;
         }
+        public static implicit operator Vector2((int, int) union) => new Vector2(union.Item1, union.Item2);
         public static List<Vector2> GetPath(Vector2 from, Vector2 to, int steps = -1)
         {
             List<Vector2> path = new List<Vector2>();

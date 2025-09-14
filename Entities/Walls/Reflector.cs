@@ -24,7 +24,7 @@ namespace ConsoleShootEmUp.Entities.Walls
                 Engine.RemoveEntity(other);
                 EnemyShot reflect = new EnemyShot(Engine);
                 FindInParent<Level>()!.AddChild(reflect);  
-                reflect.SetLocalPosition(0, 0);
+                reflect.SetGlobalPosition(GlobalPosition);
                 reflect.SetDirection(direction);
                 Engine.AddEntity(reflect);
             }

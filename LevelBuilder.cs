@@ -575,21 +575,18 @@ internal class LevelBuilder
         Level level = new(_engine);
 
 
-        Mover mainmover = new(_engine);
-        level.AddChild(mainmover);
-        mainmover.SetLocalPosition(_engine.Display.Width, 0);
+        //CSEU
 
-        Wall w = new(_engine);
-        mainmover.AddChild(w);
-        w.SetLocalPosition(0, 0);
-
-        InBoundsActivator a = new(_engine);
-        mainmover.AddChild(a);
-        a.SetLocalPosition(60, 0);
-        Enemy e = new(_engine);
-        mainmover.AddChild(e);
-        e.SetLocalPosition(60, 0);
-        a.AddToActivate(e);
+        List<EntityChar> cs = new();
+        Vector2[] cPositions = [(2,2),(2,3),(2,4),(2,5),(2,6),(3,2), (3, 3), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (3, 6),];
+        for (int i = 0; i < cPositions.Length; i++)
+        {
+            EntityChar newChar = new EntityChar(_engine);
+            cs.Add(newChar);
+            newChar.SetChar('C');
+            level.AddChild(newChar);
+            newChar.SetLocalPosition(cPositions[i]);
+        }
 
 
         FinishLevel(level);
