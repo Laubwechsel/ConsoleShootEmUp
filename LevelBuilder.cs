@@ -574,11 +574,10 @@ internal class LevelBuilder
     {
         Level level = new(_engine);
 
-
         //CSEU
 
         List<EntityChar> cs = new();
-        Vector2[] cPositions = [(2,2),(2,3),(2,4),(2,5),(2,6),(3,2), (3, 3), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (3, 6),];
+        Vector2[] cPositions = [(2,2),(2,3),(2,4),(2,5),(2,6),(3,2), (3, 6), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (3, 6),];
         for (int i = 0; i < cPositions.Length; i++)
         {
             EntityChar newChar = new EntityChar(_engine);
